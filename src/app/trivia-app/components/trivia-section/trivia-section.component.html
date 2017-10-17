@@ -1,0 +1,15 @@
+<div class="trivia-container" *ngFor="let question of questionData">
+  <mat-form-field>
+    <h1>{{question.question}}</h1>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-radio-group class="trivia-answer-group" *ngFor="let answer of question.incorrect_answers">
+      <mat-radio-button class="trivia-radio-button">{{answer}}</mat-radio-button>
+    </mat-radio-group>
+  </mat-form-field>
+
+  <mat-form-field>
+    <button mat-raised-button color="primary">Primary</button>
+  </mat-form-field>
+</div>
