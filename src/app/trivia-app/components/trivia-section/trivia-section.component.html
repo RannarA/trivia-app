@@ -1,15 +1,15 @@
-<div class="trivia-container" *ngFor="let question of questionData">
+<div class="trivia-container">
   <mat-form-field>
-    <h1>{{question.question}}</h1>
+    <h1 [innerHTML]="question"></h1>
   </mat-form-field>
 
   <mat-form-field>
-    <mat-radio-group class="trivia-answer-group" *ngFor="let answer of question.incorrect_answers">
-      <mat-radio-button class="trivia-radio-button">{{answer}}</mat-radio-button>
+    <mat-radio-group class="trivia-answer-group" [(ngModel)]="selectedAnswer">
+      <mat-radio-button class="trivia-radio-button" *ngFor="let answer of answers" [value]="answer">{{answer}}</mat-radio-button>
     </mat-radio-group>
   </mat-form-field>
 
   <mat-form-field>
-    <button mat-raised-button color="primary">Primary</button>
+    <button mat-raised-button color="primary" disabled="{{!selectedAnswer}}" (click)="sendAnswer()">Answer</button>
   </mat-form-field>
 </div>

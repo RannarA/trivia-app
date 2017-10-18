@@ -1,6 +1,6 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TriviaAppComponent} from './trivia-app/trivia-app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatRadioModule, MatToolbarModule} from '@angular/material';
@@ -23,7 +23,8 @@ import {HttpModule} from '@angular/http';
     MatToolbarModule,
     MatRadioModule,
     MatButtonModule,
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
   providers: [
     // services
