@@ -11,12 +11,6 @@ export class TriviaApiService {
 
   constructor(private http: Http) { }
 
-  initToken() {
-    return this.http.get('https://opentdb.com/api_token.php?command=request')
-      .map(response => response.json().token)
-      .subscribe(token => this.token = token);
-  }
-
   getQuestion() {
     if (!this.token) {
       return this.http.get('https://opentdb.com/api_token.php?command=request')

@@ -3,18 +3,23 @@ import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TriviaAppComponent} from './trivia-app/trivia-app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatRadioModule, MatToolbarModule} from '@angular/material';
+import {
+  MatButtonModule, MatDialogModule, MatProgressBarModule, MatRadioModule,
+  MatToolbarModule
+} from '@angular/material';
 import { ToolbarComponent } from './containers/toolbar/toolbar.component';
 import { TriviaSectionComponent } from './components/trivia-section/trivia-section.component';
 import {TriviaApiService} from './services/trivia-api.service';
 import {HttpModule} from '@angular/http';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 @NgModule({
   declarations: [
     // components
     TriviaAppComponent,
     ToolbarComponent,
-    TriviaSectionComponent
+    TriviaSectionComponent,
+    DialogComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +29,9 @@ import {HttpModule} from '@angular/http';
     MatRadioModule,
     MatButtonModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    MatProgressBarModule,
+    MatDialogModule
   ],
   providers: [
     // services
@@ -32,6 +39,7 @@ import {HttpModule} from '@angular/http';
   ],
   exports: [
     TriviaAppComponent
-  ]
+  ],
+  entryComponents: [DialogComponent]
 })
 export class TriviaAppModule {}

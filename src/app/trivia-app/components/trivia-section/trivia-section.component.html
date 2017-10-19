@@ -5,7 +5,8 @@
 
   <mat-form-field>
     <mat-radio-group class="trivia-answer-group" [(ngModel)]="selectedAnswer">
-      <mat-radio-button class="trivia-radio-button" *ngFor="let answer of answers" [value]="answer">{{answer}}</mat-radio-button>
+      <mat-radio-button class="trivia-radio-button" *ngFor="let answer of answers" [value]="answer"><span
+        [innerHTML]="answer"></span></mat-radio-button>
     </mat-radio-group>
   </mat-form-field>
 
@@ -13,3 +14,5 @@
     <button mat-raised-button color="primary" disabled="{{!selectedAnswer}}" (click)="sendAnswer()">Answer</button>
   </mat-form-field>
 </div>
+
+<mat-progress-bar mode="indeterminate" *ngIf="showLoader"></mat-progress-bar>
